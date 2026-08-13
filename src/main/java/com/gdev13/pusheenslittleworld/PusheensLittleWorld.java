@@ -2,6 +2,7 @@ package com.gdev13.pusheenslittleworld;
 
 import org.slf4j.Logger;
 
+import com.gdev13.pusheenslittleworld.registry.ModCreativeTabs;
 import com.gdev13.pusheenslittleworld.registry.ModItems;
 import com.mojang.logging.LogUtils;
 
@@ -18,6 +19,7 @@ public class PusheensLittleWorld {
 
     public PusheensLittleWorld(IEventBus modEventBus, ModContainer modContainer) {
         ModItems.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
 
         LOGGER.info("Pusheen's Little World carregado!");
     }
