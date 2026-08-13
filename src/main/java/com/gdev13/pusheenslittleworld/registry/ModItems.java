@@ -14,6 +14,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> PUSHEEN_PLUSH =
     		ITEMS.registerSimpleItem("pusheen_plush");
+    
+    public static final DeferredItem<Item> PUSHEEN_COOKIE =
+    		ITEMS.registerSimpleItem("pusheen_cookie");
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

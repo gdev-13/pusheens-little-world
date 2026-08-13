@@ -21,6 +21,7 @@ public class ModCreativeTabs {
                     .icon(() -> new ItemStack(ModItems.PUSHEEN_PLUSH.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.PUSHEEN_PLUSH.get());
+                        output.accept(ModItems.PUSHEEN_COOKIE.get());
                     })
                     .build());
 
