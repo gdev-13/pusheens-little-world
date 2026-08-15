@@ -8,6 +8,7 @@ import net.minecraft.client.particle.TextureSheetParticle;
 public class PurrfectParticle extends TextureSheetParticle {
 
     private final SpriteSet sprites;
+    private final float baseSize;
 
     public PurrfectParticle(
             ClientLevel level,
@@ -17,11 +18,18 @@ public class PurrfectParticle extends TextureSheetParticle {
             SpriteSet sprites
     ) {
         super(level, x, y, z);
-        this.sprites = sprites;
-        setSpriteFromAge(sprites);
 
-        this.lifetime = 20;
-        this.quadSize = 0.2F;
+        this.sprites = sprites;
+
+        this.lifetime = 30;
+
+        this.baseSize = 0.08F + this.random.nextFloat() * 0.04F;
+
+        this.quadSize = baseSize;
+
+        this.yd = 0.015D;
+        
+        setSpriteFromAge(sprites);
     }
 
     @Override
@@ -30,11 +38,13 @@ public class PurrfectParticle extends TextureSheetParticle {
 
         float progress = (float) this.age / this.lifetime;
 
-        this.quadSize = 0.2F + progress * 0.1F;
+        float pulse = (float) Math.sin(progress * Math.PI);
+
+        this.quadSize = baseSize + pulse * baseSize;
 
         setSpriteFromAge(sprites);
     }
-    
+
     @Override
     public ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;

@@ -37,7 +37,11 @@ public class ModItems {
                                                             new ApplyStatusEffectsConsumeEffect(
                                                                     new MobEffectInstance(
                                                                             ModEffects.PURRFECT,
-                                                                            100
+                                                                            100,
+                                                                            0,
+                                                                            false,
+                                                                            false,
+                                                                            true
                                                                     ),
                                                                     1.0F
                                                             )

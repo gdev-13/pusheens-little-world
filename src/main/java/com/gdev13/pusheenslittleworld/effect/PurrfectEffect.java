@@ -13,39 +13,47 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class PurrfectEffect extends MobEffect {
 
-	public PurrfectEffect() {
-	    super(MobEffectCategory.BENEFICIAL, 0xA9A9A9);
+    public PurrfectEffect() {
+        super(MobEffectCategory.BENEFICIAL, 0xA9A9A9);
 
-	    this.addAttributeModifier(
-	            Attributes.MOVEMENT_SPEED,
-	            ResourceLocation.fromNamespaceAndPath(
-	                    PusheensLittleWorld.MODID,
-	                    "purrfect_speed"
-	            ),
-	            0.20,
-	            AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-	    );  
+        this.addAttributeModifier(
+                Attributes.MOVEMENT_SPEED,
+                ResourceLocation.fromNamespaceAndPath(
+                        PusheensLittleWorld.MODID,
+                        "purrfect_speed"
+                ),
+                0.05,
+                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+        );
     }
-    
+
     @Override
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
-        return duration % 40 == 0;
+        return duration % 5 == 0;
     }
 
     @Override
-    public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(
+            ServerLevel level,
+            LivingEntity entity,
+            int amplifier
+    ) {
         entity.heal(1.0F);
+
+        double x = entity.getX() + (level.random.nextDouble() - 0.5D) * 1.2D;
+        double y = entity.getY() + 0.3D + level.random.nextDouble() * 1.2D;
+        double z = entity.getZ() + (level.random.nextDouble() - 0.5D) * 1.2D;
 
         level.sendParticles(
                 ModParticles.PURRFECT_PAW.get(),
-                entity.getX(),
-                entity.getY() + 1.0,
-                entity.getZ(),
+                x,
+                y,
+                z,
                 1,
-                0.4,
-                0.3,
-                0.4,
-                0.02
+                0.0D,
+                0.0D,
+                0.0D,
+                0.0D
         );
 
         return true;
