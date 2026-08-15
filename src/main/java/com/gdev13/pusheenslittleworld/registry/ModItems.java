@@ -52,6 +52,25 @@ public class ModItems {
                                     )
                     ));
     
+    public static final DeferredItem<Item> CUPCAKE =
+    		ITEMS.registerItem("cupcake",
+    				properties -> new Item(
+    						properties
+	    						.food(
+	    								new FoodProperties.Builder()
+	    										.nutrition(3)
+	    										.saturationModifier(0.4f)
+	    										.build()
+	    						)
+	    						.component(
+	    								DataComponents.CONSUMABLE,
+	    								Consumable.builder()
+	    								.animation(ItemUseAnimation.EAT)
+	    								.sound(SoundEvents.GENERIC_EAT)
+	    								.build()
+	    						)
+    				));
+    
     public static final DeferredItem<Item> STRAWBERRY_MILK =
             ITEMS.registerItem("strawberry_milk",
                     properties -> new Item(
