@@ -22,6 +22,7 @@ public class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.PUSHEEN_PLUSH.get());
                         output.accept(ModItems.PUSHEEN_COOKIE.get());
+                        output.accept(ModItems.STRAWBERRY_MILK.get());
                     })
                     .build());
 

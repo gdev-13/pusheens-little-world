@@ -3,9 +3,11 @@ package com.gdev13.pusheenslittleworld.registry;
 import com.gdev13.pusheenslittleworld.PusheensLittleWorld;
 
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.neoforged.bus.api.IEventBus;
@@ -46,6 +48,25 @@ public class ModItems {
                                                                     1.0F
                                                             )
                                                     )
+                                                    .build()
+                                    )
+                    ));
+    
+    public static final DeferredItem<Item> STRAWBERRY_MILK =
+            ITEMS.registerItem("strawberry_milk",
+                    properties -> new Item(
+                            properties
+                                    .food(
+                                            new FoodProperties.Builder()
+                                                    .nutrition(3)
+                                                    .saturationModifier(0.5f)
+                                                    .build()
+                                    )
+                                    .component(
+                                            DataComponents.CONSUMABLE,
+                                            Consumable.builder()
+                                                    .animation(ItemUseAnimation.DRINK)
+                                                    .sound(SoundEvents.GENERIC_DRINK)
                                                     .build()
                                     )
                     ));
