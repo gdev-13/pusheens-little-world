@@ -116,6 +116,12 @@ public class ModItems {
                     ModBlocks.PUSHEEN_CARPET_SINGLE,
                     new Item.Properties()
             );
+    
+    public static final DeferredItem<BlockItem> CARDBOARD_BOX =
+            ITEMS.registerSimpleBlockItem(
+                    "cardboard_box",
+                    ModBlocks.CARDBOARD_BOX
+            );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

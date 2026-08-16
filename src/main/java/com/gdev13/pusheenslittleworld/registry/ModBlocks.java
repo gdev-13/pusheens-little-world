@@ -29,6 +29,20 @@ public class ModBlocks {
                                     )
                     )
             );
+    
+    public static final DeferredBlock<Block> CARDBOARD_BOX =
+            BLOCKS.register(
+                    "cardboard_box",
+                    registryName -> new Block(
+                            BlockBehaviour.Properties.of()
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    registryName
+                                            )
+                                    )
+                    )
+            );
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
