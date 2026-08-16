@@ -2,6 +2,7 @@ package com.gdev13.pusheenslittleworld;
 
 import org.slf4j.Logger;
 
+import com.gdev13.pusheenslittleworld.registry.ModBlocks;
 import com.gdev13.pusheenslittleworld.registry.ModCreativeTabs;
 import com.gdev13.pusheenslittleworld.registry.ModEffects;
 import com.gdev13.pusheenslittleworld.registry.ModItems;
@@ -24,6 +25,7 @@ public class PusheensLittleWorld {
         ModCreativeTabs.register(modEventBus);
         ModEffects.register(modEventBus);
         ModParticles.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         LOGGER.info("Pusheen's Little World carregado!");
     }

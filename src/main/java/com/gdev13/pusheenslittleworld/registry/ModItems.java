@@ -6,6 +6,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
@@ -89,6 +90,13 @@ public class ModItems {
                                                     .build()
                                     )
                     ));
+    
+    public static final DeferredItem<BlockItem> PUSHEEN_CARPET_SINGLE =
+            ITEMS.registerSimpleBlockItem(
+                    "pusheen_carpet_single",
+                    ModBlocks.PUSHEEN_CARPET_SINGLE,
+                    new Item.Properties()
+            );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
