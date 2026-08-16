@@ -1,7 +1,20 @@
 {
   "variants": {
-    "": {
-      "model": "pusheenslittleworld:block/cardboard_box"
+    "facing=west": {
+      "model": "pusheenslittleworld:block/cardboard_box",
+      "y": 0
+    },
+    "facing=north": {
+      "model": "pusheenslittleworld:block/cardboard_box",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "pusheenslittleworld:block/cardboard_box",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "pusheenslittleworld:block/cardboard_box",
+      "y": 270
     }
   }
 }

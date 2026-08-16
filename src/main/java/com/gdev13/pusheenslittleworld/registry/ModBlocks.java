@@ -1,12 +1,16 @@
 package com.gdev13.pusheenslittleworld.registry;
 
 import com.gdev13.pusheenslittleworld.PusheensLittleWorld;
+import com.gdev13.pusheenslittleworld.block.CardboardBoxBlock;
+import com.gdev13.pusheenslittleworld.block.PusheenCarpetBlock;
 
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -15,11 +19,14 @@ public class ModBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(PusheensLittleWorld.MODID);
+    
+    public static final EnumProperty<Direction> FACING =
+            BlockStateProperties.HORIZONTAL_FACING;
 
     public static final DeferredBlock<Block> PUSHEEN_CARPET_SINGLE =
             BLOCKS.register(
                     "pusheen_carpet_single",
-                    registryName -> new CarpetBlock(
+                    registryName -> new PusheenCarpetBlock(
                             BlockBehaviour.Properties.of()
                                     .setId(
                                             ResourceKey.create(
@@ -33,7 +40,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CARDBOARD_BOX =
             BLOCKS.register(
                     "cardboard_box",
-                    registryName -> new Block(
+                    registryName -> new CardboardBoxBlock(
                             BlockBehaviour.Properties.of()
                                     .setId(
                                             ResourceKey.create(
