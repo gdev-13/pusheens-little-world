@@ -1,7 +1,8 @@
 {
   "parent": "block/block",
   "textures": {
-    "side": "pusheenslittleworld:block/cardboard_box"
+    "side": "pusheenslittleworld:block/cardboard_box",
+	"particle": "pusheenslittleworld:block/cardboard_box"
   },
   "elements": [
     {
@@ -63,6 +64,80 @@
         "up": { "texture": "#side" },
         "down": { "texture": "#side" }
       }
-    }
+    },
+	
+	{
+	  "from": [0, 9, -6],
+	  "to": [16, 10, 0],
+	  "rotation": {
+	    "origin": [8, 10, 0],
+	    "axis": "x",
+	    "angle": -20,
+	    "rescale": true
+	  },
+	  "faces": {
+	    "north": {
+	      "uv": [0, 0, 16, 1],
+	      "texture": "#side"
+	    },
+	    "south": {
+	      "uv": [0, 0, 16, 1],
+	      "texture": "#side"
+	    },
+	    "west": {
+	      "uv": [0, 0, 6, 1],
+	      "texture": "#side"
+	    },
+	    "east": {
+	      "uv": [0, 0, 6, 1],
+	      "texture": "#side"
+	    },
+	    "up": {
+	      "uv": [0, 0, 16, 6],
+	      "texture": "#side"
+	    },
+	    "down": {
+	      "uv": [0, 0, 16, 6],
+	      "texture": "#side"
+	    }
+	  }
+	},
+	
+	{
+	  "from": [0, 9, 16],
+	  "to": [16, 10, 22],
+	  "rotation": {
+	    "origin": [8, 10, 16],
+	    "axis": "x",
+	    "angle": 20,
+	    "rescale": true
+	  },
+	  "faces": {
+	    "north": {
+	      "uv": [0, 0, 16, 1],
+	      "texture": "#side"
+	    },
+	    "south": {
+	      "uv": [0, 0, 16, 1],
+	      "texture": "#side"
+	    },
+	    "west": {
+	      "uv": [0, 0, 6, 1],
+	      "texture": "#side"
+	    },
+	    "east": {
+	      "uv": [0, 0, 6, 1],
+	      "texture": "#side"
+	    },
+	    "up": {
+	      "uv": [0, 0, 16, 6],
+	      "texture": "#side"
+	    },
+	    "down": {
+	      "uv": [0, 0, 16, 6],
+	      "texture": "#side"
+	    }
+	  }
+	}
   ]
 }
