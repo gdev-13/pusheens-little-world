@@ -1,19 +1,54 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
       "y": 0
     },
-    "facing=east": {
+    "facing=north,shape=two_by_one_left": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_left",
+      "y": 0
+    },
+    "facing=north,shape=two_by_one_right": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
+      "y": 0
+    },
+
+    "facing=east,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
       "y": 90
     },
-    "facing=south": {
+    "facing=east,shape=two_by_one_left": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_left",
+      "y": 90
+    },
+    "facing=east,shape=two_by_one_right": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
+      "y": 90
+    },
+
+    "facing=south,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,shape=two_by_one_left": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_left",
+      "y": 180
+    },
+    "facing=south,shape=two_by_one_right": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
+      "y": 180
+    },
+
+    "facing=west,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
+      "y": 270
+    },
+    "facing=west,shape=two_by_one_left": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_left",
+      "y": 270
+    },
+    "facing=west,shape=two_by_one_right": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
       "y": 270
     }
   }
