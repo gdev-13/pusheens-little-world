@@ -42,6 +42,7 @@ public class ModBlocks {
                     "cardboard_box",
                     registryName -> new CardboardBoxBlock(
                             BlockBehaviour.Properties.of()
+                            		.noOcclusion()
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
