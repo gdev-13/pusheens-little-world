@@ -25,7 +25,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.CUPCAKE.get());
                         output.accept(ModItems.STRAWBERRY_MILK.get());
                         output.accept(ModItems.CHOCOLATE_BAR.get());
-                        output.accept(ModItems.PUSHEEN_CARPET_SINGLE.get());
+                        output.accept(ModItems.PUSHEEN_CARPET.get());
                         output.accept(ModItems.CARDBOARD_BOX.get());
                     })
                     .build());

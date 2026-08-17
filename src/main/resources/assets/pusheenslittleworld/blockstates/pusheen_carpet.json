@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/single",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/single",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/single",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pusheenslittleworld:block/pusheen_carpet/single",
+      "y": 270
+    }
+  }
+}

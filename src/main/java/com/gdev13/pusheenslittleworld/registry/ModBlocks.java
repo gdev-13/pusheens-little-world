@@ -23,9 +23,9 @@ public class ModBlocks {
     public static final EnumProperty<Direction> FACING =
             BlockStateProperties.HORIZONTAL_FACING;
 
-    public static final DeferredBlock<Block> PUSHEEN_CARPET_SINGLE =
+    public static final DeferredBlock<Block> PUSHEEN_CARPET =
             BLOCKS.register(
-                    "pusheen_carpet_single",
+                    "pusheen_carpet",
                     registryName -> new PusheenCarpetBlock(
                             BlockBehaviour.Properties.of()
                                     .setId(

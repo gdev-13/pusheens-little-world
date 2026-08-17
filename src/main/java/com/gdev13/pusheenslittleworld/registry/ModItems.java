@@ -110,10 +110,10 @@ public class ModItems {
                                     )
                     ));
     
-    public static final DeferredItem<BlockItem> PUSHEEN_CARPET_SINGLE =
+    public static final DeferredItem<BlockItem> PUSHEEN_CARPET =
             ITEMS.registerSimpleBlockItem(
-                    "pusheen_carpet_single",
-                    ModBlocks.PUSHEEN_CARPET_SINGLE,
+                    "pusheen_carpet",
+                    ModBlocks.PUSHEEN_CARPET,
                     new Item.Properties()
             );
     
