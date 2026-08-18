@@ -23,6 +23,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.PUSHEEN_PLUSH.get());
                         output.accept(ModItems.PUSHEEN_COOKIE.get());
                         output.accept(ModItems.CUPCAKE.get());
+                        output.accept(ModItems.STRAWBERRY_SWISS_ROLL.get());
                         output.accept(ModItems.STRAWBERRY_MILK.get());
                         output.accept(ModItems.CHOCOLATE_BAR.get());
                         output.accept(ModItems.PUSHEEN_CARPET.get());
