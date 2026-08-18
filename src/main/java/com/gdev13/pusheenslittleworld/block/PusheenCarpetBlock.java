@@ -68,10 +68,15 @@ public class PusheenCarpetBlock extends CarpetBlock {
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 
+	    Direction facing = getConnectedFacing(
+	            context.getLevel(),
+	            context.getClickedPos(),
+	            context.getHorizontalDirection()
+	    );
+
 	    BlockState state =
 	            this.defaultBlockState()
-	                    .setValue(FACING,
-	                            context.getHorizontalDirection());
+	                    .setValue(FACING, facing);
 
 	    return updateConnections(
 	            state,
@@ -232,5 +237,28 @@ public class PusheenCarpetBlock extends CarpetBlock {
 	                Block.UPDATE_ALL
 	        );
 	    }
+	}
+	
+	private Direction getConnectedFacing(
+	        LevelAccessor level,
+	        BlockPos pos,
+	        Direction defaultFacing
+	) {
+	    Direction[] directions = {
+	            Direction.NORTH,
+	            Direction.SOUTH,
+	            Direction.EAST,
+	            Direction.WEST
+	    };
+
+	    for (Direction direction : directions) {
+	        BlockState neighbor = level.getBlockState(pos.relative(direction));
+
+	        if (isCarpet(neighbor)) {
+	            return neighbor.getValue(FACING);
+	        }
+	    }
+
+	    return defaultFacing;
 	}
 }
