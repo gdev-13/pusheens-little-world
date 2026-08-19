@@ -1,11 +1,14 @@
 package com.gdev13.pusheenslittleworld;
 
+import com.gdev13.pusheenslittleworld.client.model.ChocolateSquaresRemainingProperty;
 import com.gdev13.pusheenslittleworld.client.particle.PurrfectParticle;
 import com.gdev13.pusheenslittleworld.registry.ModParticles;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.RegisterRangeSelectItemModelPropertyEvent;
 
 @EventBusSubscriber(modid = PusheensLittleWorld.MODID)
 public class ClientModEvents {
@@ -22,6 +25,19 @@ public class ClientModEvents {
                                 z,
                                 sprites
                         )
+        );
+    }
+    
+    @SubscribeEvent
+    public static void registerRangeSelectItemModelProperties(
+            RegisterRangeSelectItemModelPropertyEvent event
+    ) {
+        event.register(
+                ResourceLocation.fromNamespaceAndPath(
+                        PusheensLittleWorld.MODID,
+                        "chocolate_squares_remaining"
+                ),
+                ChocolateSquaresRemainingProperty.MAP_CODEC
         );
     }
 }

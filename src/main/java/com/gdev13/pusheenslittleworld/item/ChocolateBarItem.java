@@ -45,13 +45,31 @@ public class ChocolateBarItem extends Item {
                 return InteractionResult.SUCCESS;
             }
 
-            ItemStack square = new ItemStack(
-                    ModItems.CHOCOLATE_SQUARE.get()
-            );
+            if (stack.getCount() > 1) {
 
-            player.getInventory().placeItemBackInInventory(square);
+                ItemStack brokenBar = stack.copyWithCount(1);
 
-            removeSquare(stack);
+                stack.shrink(1);
+
+                removeSquare(brokenBar);
+
+                ItemStack square = new ItemStack(
+                        ModItems.CHOCOLATE_SQUARE.get()
+                );
+
+                player.getInventory().placeItemBackInInventory(brokenBar);
+                player.getInventory().placeItemBackInInventory(square);
+
+            } else {
+
+                ItemStack square = new ItemStack(
+                        ModItems.CHOCOLATE_SQUARE.get()
+                );
+
+                player.getInventory().placeItemBackInInventory(square);
+
+                removeSquare(stack);
+            }
 
             return InteractionResult.SUCCESS;
         }

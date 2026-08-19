@@ -1,6 +1,89 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "pusheenslittleworld:item/chocolate_bar"
+    "type": "minecraft:range_dispatch",
+    "property": "pusheenslittleworld:chocolate_squares_remaining",
+    "entries": [
+      {
+        "threshold": 2,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_2"
+        }
+      },
+      {
+        "threshold": 3,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_3"
+        }
+      },
+      {
+        "threshold": 4,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_4"
+        }
+      },
+      {
+        "threshold": 5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_5"
+        }
+      },
+      {
+        "threshold": 6,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_6"
+        }
+      },
+      {
+        "threshold": 7,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_7"
+        }
+      },
+      {
+        "threshold": 8,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_8"
+        }
+      },
+      {
+        "threshold": 9,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_9"
+        }
+      },
+      {
+        "threshold": 10,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_10"
+        }
+      },
+      {
+        "threshold": 11,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar_11"
+        }
+      },
+      {
+        "threshold": 12,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "pusheenslittleworld:item/chocolate_bar/chocolate_bar"
+    }
   }
 }
