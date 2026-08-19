@@ -1,6 +1,7 @@
 package com.gdev13.pusheenslittleworld.registry;
 
 import com.gdev13.pusheenslittleworld.PusheensLittleWorld;
+import com.gdev13.pusheenslittleworld.item.ChocolateBarItem;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
@@ -93,12 +94,35 @@ public class ModItems {
     
     public static final DeferredItem<Item> CHOCOLATE_BAR =
     		ITEMS.registerItem("chocolate_bar",
-    				properties -> new Item(
+    				properties -> new ChocolateBarItem(
     						properties
 	    						.food(
 	    								new FoodProperties.Builder()
 	    										.nutrition(2)
 	    										.saturationModifier(0.3f)
+	    										.build()
+	    						)
+	    						.component(
+	    								DataComponents.CONSUMABLE,
+	    								Consumable.builder()
+	    								.animation(ItemUseAnimation.EAT)
+	    								.sound(SoundEvents.GENERIC_EAT)
+	    								.build()
+	    						)
+	    						.component(
+	    							    ModDataComponents.CHOCOLATE_SQUARES_REMAINING,
+	    							    12
+	    							)
+    				));
+    
+    public static final DeferredItem<Item> CHOCOLATE_SQUARE =
+    		ITEMS.registerItem("chocolate_square",
+    				properties -> new Item(
+    						properties
+	    						.food(
+	    								new FoodProperties.Builder()
+	    										.nutrition(1)
+	    										.saturationModifier(0.1f)
 	    										.build()
 	    						)
 	    						.component(
