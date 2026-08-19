@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CardboardBoxBlock extends Block {
@@ -18,8 +19,13 @@ public class CardboardBoxBlock extends Block {
 	public static final EnumProperty<Direction> FACING =
 			BlockStateProperties.HORIZONTAL_FACING;
 	
-	private static final VoxelShape SHAPE =
-	        Block.box(0, 0, 0, 16, 10, 16);
+	private static final VoxelShape SHAPE = Shapes.or(
+	        Block.box(1, 0, 1, 15, 1, 15),
+	        Block.box(0, 0, 0, 16, 10, 1),
+	        Block.box(0, 0, 15, 16, 10, 16),
+	        Block.box(0, 0, 1, 1, 10, 15),
+	        Block.box(15, 0, 1, 16, 10, 15)
+	);
 	
 	public CardboardBoxBlock(BlockBehaviour.Properties properties) {
         super(properties);
