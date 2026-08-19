@@ -98,8 +98,8 @@ public class ModItems {
     						properties
 	    						.food(
 	    								new FoodProperties.Builder()
-	    										.nutrition(2)
-	    										.saturationModifier(0.3f)
+	    										.nutrition(12)
+	    										.saturationModifier(0.1f)
 	    										.build()
 	    						)
 	    						.component(
