@@ -38,7 +38,11 @@ public class PusheenCarpetBlock extends CarpetBlock {
 	public enum CarpetShape implements StringRepresentable {
 	    SINGLE,
 	    TWO_BY_ONE_LEFT,
-	    TWO_BY_ONE_RIGHT;
+	    TWO_BY_ONE_RIGHT,
+		
+		THREE_BY_ONE_LEFT,
+		THREE_BY_ONE_CENTER,
+		THREE_BY_ONE_RIGHT;
 	    
 	    @Override
 	    public String getSerializedName() {
@@ -118,54 +122,124 @@ public class PusheenCarpetBlock extends CarpetBlock {
 	            .setValue(EAST, east)
 	            .setValue(WEST, west);
 	    
-	    CarpetShape shape = determineShape(updatedState);
+	    CarpetShape shape =
+	            determineShape(
+	                    updatedState,
+	                    level,
+	                    pos
+	            );
 
 	    updatedState = updatedState.setValue(SHAPE, shape);
 
 	    return updatedState;
 	}
 	
-	private boolean hasNeighborOnRight(BlockState state) {
-
-	    Direction facing = state.getValue(FACING);
+	private Direction getLeftDirection(Direction facing) {
 
 	    return switch (facing) {
-	        case NORTH -> state.getValue(EAST);
-	        case SOUTH -> state.getValue(WEST);
-	        case EAST -> state.getValue(SOUTH);
-	        case WEST -> state.getValue(NORTH);
-	        default -> false;
+	        case NORTH -> Direction.WEST;
+	        case SOUTH -> Direction.EAST;
+	        case EAST -> Direction.NORTH;
+	        case WEST -> Direction.SOUTH;
+	        default -> Direction.NORTH;
 	    };
 	}
 	
-	private boolean hasNeighborOnLeft(BlockState state) {
-
-	    Direction facing = state.getValue(FACING);
+	private Direction getRightDirection(Direction facing) {
 
 	    return switch (facing) {
-	        case NORTH -> state.getValue(WEST);
-	        case SOUTH -> state.getValue(EAST);
-	        case EAST -> state.getValue(NORTH);
-	        case WEST -> state.getValue(SOUTH);
-	        default -> false;
+	        case NORTH -> Direction.EAST;
+	        case SOUTH -> Direction.WEST;
+	        case EAST -> Direction.SOUTH;
+	        case WEST -> Direction.NORTH;
+	        default -> Direction.NORTH;
 	    };
 	}
 	
-	private CarpetShape determineShape(BlockState state) {
+	private int countConnectedLeft(
+	        LevelAccessor level,
+	        BlockPos pos,
+	        Direction facing
+	) {
 
-	    boolean left = hasNeighborOnLeft(state);
-	    boolean right = hasNeighborOnRight(state);
+	    int count = 0;
 
-	    if (!left && !right) {
+	    Direction left = getLeftDirection(facing);
+
+	    BlockPos currentPos = pos.relative(left);
+
+	    while (isCarpet(level.getBlockState(currentPos))) {
+	        count++;
+	        currentPos = currentPos.relative(left);
+	    }
+
+	    return count;
+	}
+	
+	private int countConnectedRight(
+	        LevelAccessor level,
+	        BlockPos pos,
+	        Direction facing
+	) {
+
+	    int count = 0;
+
+	    Direction right = getRightDirection(facing);
+
+	    BlockPos currentPos = pos.relative(right);
+
+	    while (isCarpet(level.getBlockState(currentPos))) {
+	        count++;
+	        currentPos = currentPos.relative(right);
+	    }
+
+	    return count;
+	}
+	
+	private CarpetShape determineShape(
+	        BlockState state,
+	        LevelAccessor level,
+	        BlockPos pos
+	) {
+
+	    Direction facing = state.getValue(FACING);
+
+	    int leftCount =
+	            countConnectedLeft(
+	                    level,
+	                    pos,
+	                    facing
+	            );
+
+	    int rightCount =
+	            countConnectedRight(
+	                    level,
+	                    pos,
+	                    facing
+	            );
+
+	    if (leftCount == 0 && rightCount == 0) {
 	        return CarpetShape.SINGLE;
 	    }
 
-	    if (!left && right) {
+	    if (leftCount == 0 && rightCount == 1) {
 	        return CarpetShape.TWO_BY_ONE_LEFT;
 	    }
 
-	    if (left && !right) {
+	    if (leftCount == 1 && rightCount == 0) {
 	        return CarpetShape.TWO_BY_ONE_RIGHT;
+	    }
+
+	    if (leftCount == 0 && rightCount >= 2) {
+	        return CarpetShape.THREE_BY_ONE_LEFT;
+	    }
+
+	    if (leftCount >= 1 && rightCount >= 1) {
+	        return CarpetShape.THREE_BY_ONE_CENTER;
+	    }
+
+	    if (leftCount >= 2 && rightCount == 0) {
+	        return CarpetShape.THREE_BY_ONE_RIGHT;
 	    }
 
 	    return CarpetShape.SINGLE;

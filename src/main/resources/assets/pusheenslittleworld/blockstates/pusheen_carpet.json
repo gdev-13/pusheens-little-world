@@ -12,6 +12,18 @@
       "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
       "y": 0
     },
+	"facing=north,shape=three_by_one_left": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_left",
+	  "y": 0
+	},
+	"facing=north,shape=three_by_one_center": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_center",
+	  "y": 0
+	},
+	"facing=north,shape=three_by_one_right": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_right",
+	  "y": 0
+	},
 
     "facing=east,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
@@ -25,6 +37,18 @@
       "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
       "y": 90
     },
+	"facing=east,shape=three_by_one_left": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_left",
+	  "y": 90
+	},
+	"facing=east,shape=three_by_one_center": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_center",
+	  "y": 90
+	},
+	"facing=east,shape=three_by_one_right": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_right",
+	  "y": 90
+	},
 
     "facing=south,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
@@ -38,6 +62,18 @@
       "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
       "y": 180
     },
+	"facing=south,shape=three_by_one_left": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_left",
+	  "y": 180
+	},
+	"facing=south,shape=three_by_one_center": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_center",
+	  "y": 180
+	},
+	"facing=south,shape=three_by_one_right": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_right",
+	  "y": 180
+	},
 
     "facing=west,shape=single": {
       "model": "pusheenslittleworld:block/pusheen_carpet/single",
@@ -50,6 +86,18 @@
     "facing=west,shape=two_by_one_right": {
       "model": "pusheenslittleworld:block/pusheen_carpet/2x1_right",
       "y": 270
-    }
+    },
+	"facing=west,shape=three_by_one_left": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_left",
+	  "y": 270
+	},
+	"facing=west,shape=three_by_one_center": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_center",
+	  "y": 270
+	},
+	"facing=west,shape=three_by_one_right": {
+	  "model": "pusheenslittleworld:block/pusheen_carpet/3x1_right",
+	  "y": 270
+	}
   }
 }
