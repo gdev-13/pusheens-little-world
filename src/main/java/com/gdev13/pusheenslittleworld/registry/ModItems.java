@@ -165,6 +165,12 @@ public class ModItems {
                     "cardboard_box",
                     ModBlocks.CARDBOARD_BOX
             );
+    
+    public static final DeferredItem<BlockItem> PUSHEEN_MUG = 
+    		ITEMS.registerSimpleBlockItem(
+    				"pusheen_mug",
+    				ModBlocks.PUSHEEN_MUG
+    		);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

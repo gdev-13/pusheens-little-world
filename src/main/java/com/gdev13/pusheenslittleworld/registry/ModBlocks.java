@@ -3,6 +3,7 @@ package com.gdev13.pusheenslittleworld.registry;
 import com.gdev13.pusheenslittleworld.PusheensLittleWorld;
 import com.gdev13.pusheenslittleworld.block.CardboardBoxBlock;
 import com.gdev13.pusheenslittleworld.block.PusheenCarpetBlock;
+import com.gdev13.pusheenslittleworld.block.PusheenMugBlock;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +42,21 @@ public class ModBlocks {
             BLOCKS.register(
                     "cardboard_box",
                     registryName -> new CardboardBoxBlock(
+                            BlockBehaviour.Properties.of()
+                            		.noOcclusion()
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    registryName
+                                            )
+                                    )
+                    )
+            );
+    
+    public static final DeferredBlock<Block> PUSHEEN_MUG =
+            BLOCKS.register(
+                    "pusheen_mug",
+                    registryName -> new PusheenMugBlock(
                             BlockBehaviour.Properties.of()
                             		.noOcclusion()
                                     .setId(
