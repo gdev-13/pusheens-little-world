@@ -153,6 +153,25 @@ public class ModItems {
                                     )
                     ));
     
+    public static final DeferredItem<Item> POTATO_CHIPS = 
+    		ITEMS.registerItem("potato_chips",
+    				properties -> new Item(
+    						properties
+    								.food(
+    										new FoodProperties.Builder()
+    												.nutrition(8)
+    												.saturationModifier(0.4f)
+    												.build()
+    								)
+    								.component(
+    										DataComponents.CONSUMABLE,
+    										Consumable.builder()
+    										.animation(ItemUseAnimation.EAT)
+    										.sound(SoundEvents.GENERIC_EAT)
+    										.build()
+    								)
+    				));
+    
     public static final DeferredItem<BlockItem> PUSHEEN_CARPET =
             ITEMS.registerSimpleBlockItem(
                     "pusheen_carpet",
