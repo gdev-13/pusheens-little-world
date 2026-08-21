@@ -1,7 +1,20 @@
 {
   "variants": {
-    "": {
-      "model": "pusheenslittleworld:block/pusheen_mug"
+    "facing=west": {
+      "model": "pusheenslittleworld:block/pusheen_mug",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "pusheenslittleworld:block/pusheen_mug",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "pusheenslittleworld:block/pusheen_mug",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "pusheenslittleworld:block/pusheen_mug",
+      "y": 0
     }
   }
 }
