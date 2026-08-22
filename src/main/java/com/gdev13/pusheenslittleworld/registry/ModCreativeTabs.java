@@ -31,6 +31,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.PUSHEEN_CARPET.get());
                         output.accept(ModItems.CARDBOARD_BOX.get());
                         output.accept(ModItems.PUSHEEN_MUG.get());
+                        output.accept(ModItems.YARN_BALL.get());
                     })
                     .build());
 

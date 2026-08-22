@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=west": {
+      "model": "pusheenslittleworld:block/yarn_ball",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "pusheenslittleworld:block/yarn_ball",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "pusheenslittleworld:block/yarn_ball",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "pusheenslittleworld:block/yarn_ball",
+      "y": 0
+    }
+  }
+}

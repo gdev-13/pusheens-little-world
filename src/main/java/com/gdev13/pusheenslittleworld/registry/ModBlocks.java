@@ -4,6 +4,7 @@ import com.gdev13.pusheenslittleworld.PusheensLittleWorld;
 import com.gdev13.pusheenslittleworld.block.CardboardBoxBlock;
 import com.gdev13.pusheenslittleworld.block.PusheenCarpetBlock;
 import com.gdev13.pusheenslittleworld.block.PusheenMugBlock;
+import com.gdev13.pusheenslittleworld.block.YarnBallBlock;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -67,6 +68,21 @@ public class ModBlocks {
                                     )
                     )
             );
+    
+    public static final DeferredBlock<Block> YARN_BALL = 
+    		BLOCKS.register(
+    				"yarn_ball", 
+    				registryName -> new YarnBallBlock(
+    						BlockBehaviour.Properties.of()
+    								.noOcclusion()
+    								.setId(
+    										ResourceKey.create(
+    												Registries.BLOCK, 
+    												registryName
+    										)
+    								)
+    				)
+    		);
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

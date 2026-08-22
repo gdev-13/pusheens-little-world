@@ -190,6 +190,12 @@ public class ModItems {
     				"pusheen_mug",
     				ModBlocks.PUSHEEN_MUG
     		);
+    
+    public static final DeferredItem<BlockItem> YARN_BALL =
+    		ITEMS.registerSimpleBlockItem(
+    				"yarn_ball",
+    				ModBlocks.YARN_BALL
+    		);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
