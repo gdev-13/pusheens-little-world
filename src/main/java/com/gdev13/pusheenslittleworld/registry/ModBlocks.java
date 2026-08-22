@@ -83,6 +83,12 @@ public class ModBlocks {
     								)
     				)
     		);
+    
+    public static final DeferredBlock<Block> SUGAR_CRYSTAL_BLOCK =
+            BLOCKS.registerSimpleBlock(
+                    "sugar_crystal_block",
+                    BlockBehaviour.Properties.of()
+            );
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

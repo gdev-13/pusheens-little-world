@@ -199,6 +199,11 @@ public class ModItems {
     
     public static final DeferredItem<Item> SUGAR_CRYSTAL_FRAGMENT =
             ITEMS.registerSimpleItem("sugar_crystal_fragment");
+    
+    public static final DeferredItem<BlockItem> SUGAR_CRYSTAL_BLOCK =
+            ITEMS.registerSimpleBlockItem(
+                    ModBlocks.SUGAR_CRYSTAL_BLOCK
+            );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
