@@ -19,9 +19,11 @@ public class PusheenMugBlock extends Block {
 	public static final EnumProperty<Direction> FACING = 
 			BlockStateProperties.HORIZONTAL_FACING;
 
-    private static final VoxelShape SHAPE = Shapes.or(
-            Block.box(4, 0, 4, 12, 8, 12)
-    );
+	private static final VoxelShape SHAPE = Shapes.or(
+	        Block.box(5, 0, 5, 11, 5, 11),
+	        Block.box(6, 5, 6, 10, 6.1, 10),
+	        Block.box(10.5, 1, 7, 13, 4.6, 9)
+	);
 
     public PusheenMugBlock(BlockBehaviour.Properties properties) {
         super(properties);
