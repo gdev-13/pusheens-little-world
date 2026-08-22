@@ -196,6 +196,9 @@ public class ModItems {
     				"yarn_ball",
     				ModBlocks.YARN_BALL
     		);
+    
+    public static final DeferredItem<Item> SUGAR_CRYSTAL_FRAGMENT =
+            ITEMS.registerSimpleItem("sugar_crystal_fragment");
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -32,6 +32,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.CARDBOARD_BOX.get());
                         output.accept(ModItems.PUSHEEN_MUG.get());
                         output.accept(ModItems.YARN_BALL.get());
+                        output.accept(ModItems.SUGAR_CRYSTAL_FRAGMENT.get());
                     })
                     .build());
 
