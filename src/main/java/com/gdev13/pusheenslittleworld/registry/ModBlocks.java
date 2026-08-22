@@ -10,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -36,6 +37,8 @@ public class ModBlocks {
                                                     registryName
                                             )
                                     )
+                                    .sound(SoundType.WOOL)
+                                    .strength(0.1F)
                     )
             );
     
@@ -51,6 +54,8 @@ public class ModBlocks {
                                                     registryName
                                             )
                                     )
+                                    .sound(SoundType.SCAFFOLDING)
+                                    .strength(0.1F)
                     )
             );
     
@@ -66,6 +71,8 @@ public class ModBlocks {
                                                     registryName
                                             )
                                     )
+                                    .sound(SoundType.DECORATED_POT)
+                                    .strength(0.1F)
                     )
             );
     
@@ -81,6 +88,8 @@ public class ModBlocks {
     												registryName
     										)
     								)
+    								.sound(SoundType.WOOL)
+    								.strength(0.1F)
     				)
     		);
     
@@ -88,6 +97,9 @@ public class ModBlocks {
             BLOCKS.registerSimpleBlock(
                     "sugar_crystal_block",
                     BlockBehaviour.Properties.of()
+		                    .sound(SoundType.AMETHYST)
+		                    .strength(3.0F)
+		                    .requiresCorrectToolForDrops()
             );
 
     public static void register(IEventBus eventBus) {
